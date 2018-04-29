@@ -3,7 +3,13 @@
 ## Description
 
 Scala kernel を含む Jupyter Notebook の docker image です  
-https://github.com/jupyter-scala/jupyter-scala
+
+## DockerHub repository
+* https://github.com/kzmake/docker-jupyter-scala
+
+## Scala kernel
+Using jupyter-scala (Scala version 2.12.2)
+* https://github.com/jupyter-scala/jupyter-scala
 
 ## Requirements
 
@@ -16,14 +22,19 @@ https://github.com/jupyter-scala/jupyter-scala
 1. Run docker image `kzmake/jupyter-scala`
 
     ```
-$ docker run -it -p 8888:8888 -v $(pwd):/home/jovyan/work kzmake/jupyter-scala
-```
+    $ docker run -it -p 8888:8888 -v $(pwd):/home/jovyan/work kzmake/jupyter-scala
+    ```
 
-    or
+        or
 
     ```
-$ docker run -it -p 8888:8888 -v $(pwd):/home/jovyan/work kzmake/jupyter-scala start-notebook.sh --NotebookApp.token=''
-```
+    $ docker run -it -p 8888:8888 -v $(pwd):/home/jovyan/work kzmake/jupyter-scala start-notebook.sh --NotebookApp.token=''
+    ```
+        or
+
+    ```
+    $ docker-compose up -d
+    ```
 
 2. Access to Jupyter Notebook
 http://localhost:8888/
@@ -31,13 +42,13 @@ http://localhost:8888/
 ## Build
 
 ```
-docker build -t kzmake/jupyter-scala .
+$ docker build -t kzmake/jupyter-scala .
 ```
 
 ## Pull
 
 ```
-docker pull kzmake/jupyter-scala
+$ docker pull kzmake/jupyter-scala
 ```
 
 ## Support and Migration
